@@ -72,8 +72,8 @@ const CheckoutStep = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.steps}>
+    <div className='flex max-w-7xl mx-auto gap-x-8 my-8 mobile:flex-col mobile:px-6'>
+      <div className='basis-1/2 bg-lavender-mist p-3 mobile:basis-full'>
         <div className={styles.breadcrumbs}>
           <p className={checkoutStep === 1 ? styles.activeStep : ""}>
             Information
@@ -87,17 +87,43 @@ const CheckoutStep = () => {
         </div>
         {checkoutStep !== 1 ? <StepOverview /> : null}
         {handleStep()}
-        <button
+        {/* <button
           className={styles.orderBtn}
           onClick={() => updateOrderSummaryDisplay()}
         >
           View Order Summary
-        </button>
+        </button> */}
       </div>
-      <div className={styles.summary}>
+      <div className='basis-1/2 mobile:basis-full mobile:mt-10'>
         <CheckoutSummary cart={cart} />
       </div>
     </div>
+    // <div className={styles.container}>
+    //   <div className={styles.steps}>
+    //     <div className={styles.breadcrumbs}>
+    //       <p className={checkoutStep === 1 ? styles.activeStep : ""}>
+    //         Information
+    //       </p>
+    //       <p>/</p>
+    //       <p className={checkoutStep === 2 ? styles.activeStep : ""}>
+    //         Delivery
+    //       </p>
+    //       <p>/</p>
+    //       <p className={checkoutStep === 3 ? styles.activeStep : ""}>Payment</p>
+    //     </div>
+    //     {checkoutStep !== 1 ? <StepOverview /> : null}
+    //     {handleStep()}
+    //     <button
+    //       className={styles.orderBtn}
+    //       onClick={() => updateOrderSummaryDisplay()}
+    //     >
+    //       View Order Summary
+    //     </button>
+    //   </div>
+    //   <div className={styles.summary}>
+    //     <CheckoutSummary cart={cart} />
+    //   </div>
+    // </div>
   );
 };
 
