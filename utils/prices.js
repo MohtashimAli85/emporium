@@ -43,3 +43,17 @@ export function formatPrices(cart, variant, digits = 2) {
     digits
   );
 }
+export function myformatPrices(cart, price, digit = 2) {
+  const currency_symbols = {
+    'USD': '$', // US Dollar
+    'EU': '€', // Euro
+  }
+  console.log(price);
+  if (!cart || !cart.region || !price) return;
+  if (!price) return `15.00 EUR`;
+  const p = (price / 100).toFixed(2);
+  const currency_name = cart.region.name;
+  const currency = currency_symbols[currency_name];
+  const fprice = currency + p;
+  return fprice;
+}
